@@ -1,0 +1,112 @@
+/* OVERLAY */
+.delete_popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.delete_popup-overlay.is-open {
+  display: flex;
+  opacity: 1;
+}
+
+/* POPUP BOX */
+.delete_popup {
+  background: #fff;
+  width: 380px;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(10px);
+  transition: transform 0.2s ease;
+}
+
+.delete_popup-overlay.is-open .delete_popup {
+  transform: translateY(0);
+}
+
+/* HEADER — just holds the close button, aligned right */
+.delete_popup__header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 12px 0;
+}
+
+.delete_popup__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.delete_popup__close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* BODY */
+.delete_popup__body {
+  padding: 8px 24px 24px;
+  text-align: center;
+}
+
+.delete_popup__body p {
+  color: black;
+  font-size: 1.05em;
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
+
+.delete_popup__body form {
+  display: flex;
+  gap: 10px;
+}
+
+.delete_popup__body form button {
+  flex: 1;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.65rem;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+/* "No" — neutral/cancel button */
+.delete_popup__body form button[type="button"],
+.delete_popup__body form button:first-child {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.delete_popup__body form button[type="button"]:hover,
+.delete_popup__body form button:first-child:hover {
+  background-color: #e2e2e2;
+}
+
+/* "Yes, delete" — destructive action, red instead of orange to signal danger */
+.delete_popup__body form button[type="submit"] {
+  background-color: #d13a2f;
+  color: white;
+}
+
+.delete_popup__body form button[type="submit"]:hover {
+  background-color: #b12f26;
+}

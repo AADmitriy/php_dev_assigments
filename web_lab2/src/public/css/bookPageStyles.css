@@ -1,0 +1,202 @@
+.book-page {
+  display: grid;
+  grid-template-columns: 280px 1fr 240px;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  align-items: start; /* required for sticky children to work inside grid */
+}
+
+/* LEFT — sticky image */
+.book-page__media {
+  position: sticky;
+  top: 24px;
+}
+
+.book-page__img-wrapper {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f2f2f2;
+  border: 1px solid #e5e5e5;
+}
+
+.book-page__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* MIDDLE — title, author, description */
+.book-page__content {
+  min-width: 0; /* prevents long text/urls from overflowing the grid column */
+  padding-top: 4px;
+}
+
+.book-page__title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.8em;
+  line-height: 1.3;
+  margin: 0 0 6px;
+  word-break: break-word;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-page__added,
+.book-page__modified,
+.book-page__author {
+  color: gray;
+  font-size: 1em;
+  line-height: 1.3;
+  margin: 0;
+  word-break: break-word;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-page__divider {
+  height: 1px;
+  background: #eee;
+  margin: 20px 0;
+}
+
+.book-page__section-label {
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0 0 10px;
+}
+
+.book-page__description {
+  color: #333;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-line; /* respects line breaks typed into the description */
+  word-break: break-word;
+}
+
+/* RIGHT — sticky price/buy box */
+.book-page__purchase-col {
+  position: sticky;
+  top: 24px;
+}
+
+.book-page__purchase-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px 16px;
+  background: #fff;
+}
+
+.book-page__price {
+  color: black;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.book-page__edit-btn,
+.book-page__delete-btn,
+.book-page__buy-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+.book-page__buy-btn {
+  background-color: #e9661d;
+  color: white;
+}
+
+.book-page__buy-btn:hover {
+  background-color: #c7581c;
+}
+
+.book-page__delete-btn svg,
+.book-page__edit-btn svg,
+.book-page__buy-btn svg {
+  fill: white;
+}
+
+.book-page__edit-btn {
+  background-color: #e9d11d;
+  color: white;
+}
+
+.book-page__edit-btn:hover {
+  background-color: #d4bf1b;
+}
+
+.book-page__delete-btn {
+  background-color: #d11a1a;
+  color: white;
+}
+
+.book-page__delete-btn:hover {
+  background-color: #b61818;
+}
+
+.book-page__stock {
+  color: gray;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+/* RESPONSIVE — stack columns on smaller screens */
+@media (max-width: 860px) {
+  .book-page {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .book-page__media {
+    position: static;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .book-page__purchase-col {
+    position: static;
+  }
+
+  .book-page__purchase-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .book-page__buy-btn {
+    width: auto;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .book-page__stock {
+    display: none; /* keeps the row compact on mobile */
+  }
+}

@@ -1,0 +1,66 @@
+/* Navbar */
+
+nav {
+  padding-block: 0.5px;
+  background-color: #223651;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 4rem;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+}
+
+nav .logo {
+  font-size: 2em;
+  color: antiquewhite
+}
+
+nav .logo span {
+  font-family: "Brush Script MT", "Comic Sans MS", cursive;
+}
+
+nav button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+nav button svg {
+  fill: white;
+}
+
+nav button .counter {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.6em;
+  background: #e9661d;
+  color: white;
+  padding: 0.1rem;
+  position: absolute;
+  right: -0.4rem;
+  top: 0.2rem;
+}
+
+.nav-link {
+  font-size: 1.2em;
+  color: antiquewhite;
+  text-decoration: none;
+  margin-bottom: .3rem;
+}
+
+.nav-link:hover {
+  color: #e9661d;
+}
