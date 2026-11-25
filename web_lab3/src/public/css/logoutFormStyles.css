@@ -1,0 +1,51 @@
+.logout-form__body {
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 24px 14px;
+}
+
+.logout-form__icon {
+  width: 96px;
+  height: 96px;
+  color: #e9661d;
+}
+
+.logout-form__question {
+  color: black;
+  font-size: 1.05em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.logout-form__footer {
+  display: flex;
+  gap: 10px;
+}
+
+.logout-form__footer .logout-form__cancel,
+.logout-form__footer .logout-form__confirm {
+  flex: 1;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.logout-form__cancel {
+  display: inline-block;
+  text-decoration: none;
+  color: gray;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  padding: 0.7rem;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.logout-form__cancel:hover {
+  border-color: #e9661d;
+  color: #e9661d;
+}

@@ -1,0 +1,112 @@
+.import-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  color: gray;
+}
+
+.import-status__icon {
+  display: none;
+  width: 56px;
+  height: 56px;
+}
+
+.import-status[data-state="waiting"] .import-status__icon--waiting,
+.import-status[data-state="processing"] .import-status__icon--processing,
+.import-status[data-state="done"] .import-status__icon--done {
+  display: block;
+}
+
+.import-status[data-state="processing"] {
+  color: #e9661d;
+}
+
+.import-status[data-state="done"] {
+  color: #2e9e5b;
+}
+
+.import-status[data-state="processing"] .import-status__icon--processing {
+  animation: import-spin 0.9s linear infinite;
+}
+
+@keyframes import-spin {
+  to { transform: rotate(360deg); }
+}
+
+.import-status__text {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.import-message {
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+.import-message--error {
+  color: #b3261e;
+  background: #fdeceb;
+  border: 1px solid #f5c6c2;
+}
+
+.import-report {
+  display: flex;
+  gap: 8px;
+}
+
+.import-report__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+.import-report__num {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: black;
+}
+
+.import-report__label {
+  font-size: 0.85em;
+  color: gray;
+}
+
+.import-report__item--added .import-report__num { color: #2e9e5b; }
+.import-report__item--skipped .import-report__num { color: #e9661d; }
+.import-report__item--errors .import-report__num { color: #b3261e; }
+
+.import-errors {
+  margin: 0;
+  padding: 0.6rem 0.7rem 0.6rem 1.8rem;
+  max-height: 160px;
+  overflow-y: auto;
+  font-size: 0.85em;
+  color: #b3261e;
+  background: #fdeceb;
+  border-radius: 10px;
+}
+
+.import-link {
+  align-self: flex-start;
+  font-size: 0.9em;
+  color: #e9661d;
+  text-decoration: none;
+}
+
+.import-link:hover {
+  color: #c7581c;
+  text-decoration: underline;
+}
+
+.book-form__submit:disabled {
+  background-color: #e5e5e5;
+  color: #999;
+  cursor: not-allowed;
+}

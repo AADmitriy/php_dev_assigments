@@ -1,0 +1,35 @@
+.error-403__body {
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 24px 14px;
+}
+
+.error-403__code {
+  margin: 0;
+  font-size: 5.5em;
+  font-weight: bold;
+  line-height: 1;
+  color: #e9661d;
+}
+
+.error-403__status {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: black;
+}
+
+.error-403__message {
+  margin: 10px 0 0;
+  color: gray;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.error-403__home {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}

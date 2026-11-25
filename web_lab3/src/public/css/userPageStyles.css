@@ -1,0 +1,78 @@
+/* Profile card — mirrors logoutFormStyles.css (same palette, spacing, radius) */
+
+.profile-card__body {
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 24px 14px;
+}
+
+.profile-card__avatar {
+  width: 96px;
+  height: 96px;
+  color: #e9661d;
+}
+
+.profile-card__name {
+  color: black;
+  font-size: 1.05em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+  word-break: break-word;
+}
+
+.profile-card__role {
+  display: inline-block;
+  padding: 2px 12px;
+  border: 1px solid #e9661d;
+  border-radius: 10px;
+  color: #e9661d;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.profile-card__info {
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 0;
+  text-align: left;
+}
+
+.profile-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.profile-card__row:last-child {
+  border-bottom: none;
+}
+
+.profile-card__row dt {
+  color: gray;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.profile-card__row dd {
+  color: black;
+  font-size: 1em;
+  margin: 0;
+  text-align: right;
+  word-break: break-word;
+}
+
+.profile-card__footer {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-card__footer .logout-form__cancel {
+  flex: 1;
+  box-sizing: border-box;
+  text-align: center;
+}

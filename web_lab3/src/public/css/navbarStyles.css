@@ -1,0 +1,99 @@
+/* Navbar */
+
+:root {
+  --nav-bg: #223651;
+  --nav-text: antiquewhite;
+  --nav-accent: #e9661d;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 0.75rem 4rem;
+  background-color: var(--nav-bg);
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav .logo {
+  font-size: 2em;
+  color: var(--nav-text);
+}
+
+nav .logo span {
+  font-family: "Brush Script MT", "Comic Sans MS", cursive;
+}
+
+.nav-link {
+  font-size: 1.2em;
+  color: var(--nav-text);
+  padding-block: 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--nav-accent);
+}
+
+.nav-link.active {
+  border-bottom-color: var(--nav-accent);
+}
+
+nav button {
+  position: relative;
+  display: flex;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav button svg {
+  fill: white;
+  transition: fill 0.2s;
+}
+
+nav button:hover svg {
+  fill: var(--nav-accent);
+}
+
+nav button .counter {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding-inline: 4px;
+  border-radius: 9px;
+  font-size: 0.7em;
+  background: var(--nav-accent);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding-inline: 1rem;
+  }
+
+  .nav-left,
+  .nav-right {
+    gap: 1rem;
+  }
+}
